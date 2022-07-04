@@ -1,0 +1,48 @@
+
+    {% extends 'base.html' %}
+{% block tohen %}
+    <style>
+        body{
+            background-color: antiquewhite;
+        }
+      
+    
+    </style>
+
+
+     <header>web of dogs by or zeharia</header> 
+    
+        <div>
+            <h1 class="headerContact">DOGS</h1> 
+         </div><br><br>
+    
+     <span class="littel_header"> Sweet dogs</span><br><br>
+    
+ 
+    
+     <div id="container">
+       <div id="pic1">
+        <img class="pictures" src="{{ url_for('home.static',filename='/home1.jpg') }}" alt="" >
+       </div> 
+       
+       <div id="animation"class="pic2">
+        <img  class="pictures" src="{{ url_for('home.static',filename='/home2.jpg') }}" alt="">
+       </div>
+
+       <div id="animation2" class="pic2">
+        <img  class="pictures" src="{{ url_for('home.static',filename='/home4.jpg') }}" alt="" >
+        </div>
+
+       <div id="pic3" >
+        <img  class="pictures" src="{{ url_for('home.static',filename='/home3.jpg') }}" alt="">
+       </div>
+
+     </div>
+      
+     
+     <button id="but_text" onclick="fun_text()">More about the site</button>
+     <p id="text_open"></p>
+    
+   
+{% endblock %}
+</html>

@@ -1,0 +1,153 @@
+.active {
+    background-color: rgb(95, 129, 190);
+}
+
+
+a {
+    display: inline;
+}
+
+
+
+#nav{
+    background-color:rgb(142, 160, 194);
+    font-size: 30px;
+}
+
+.pictures{
+    width: 350px;
+    height: 200px;
+}
+
+#but_text{
+    background-color:rgb(198, 203, 209);
+    margin: 20px;
+}
+
+*{
+    font-style:oblique;
+    color:black
+}
+
+div{
+   padding: 5px; margin: 20px;
+}
+.headerContact{
+    border:2px solid rgb(148, 170, 167); padding: 5px; margin: 20px; text-align: center;
+}
+.littel_header{
+    border:2px solid rgb(111, 121, 119);font-size: 20px; margin: 20px;
+}
+
+#container{
+    display: grid;
+    grid-template-areas: 'pic1 pic2 pic3 ' ;
+}
+
+#pic1{
+    grid-area: pic1;
+    width: 350px;
+    height: 200px;
+}
+.pic2{
+    grid-area: pic2;
+    width: 350px;
+    height: 200px;
+}
+#pic3{
+    grid-area: pic3;
+    width: 350px;
+    height: 200px;
+}
+#container2{
+    display: grid;
+      background-color:Silver ;
+   
+}
+
+@media only screen and (max-width: 600px) {
+    #container{
+        display: grid;
+        grid-template-areas: 'pic1'  ' pic2'
+        'pic3 '
+       ;
+    }
+    
+    #container2{
+        display: grid;
+      text-align: center;
+    }
+}
+
+
+#animation{
+    animation: blink 4s ease-in-out 0.5s 5;
+}
+
+@keyframes blink {
+    0%{ opacity: 0;}
+    33%{opacity: 0.5;}
+    66%{opacity: 1;}
+}
+#animation2{
+    animation: blink2 4s ease-in-out 0.5s 5;
+}
+
+@keyframes blink2 {
+    0%{ opacity: 1;}
+    33%{opacity: 0.5;}
+    66%{opacity: 0;}
+}
+
+
+.cont{
+    border: darkgrey 3px solid;
+    border-radius: 5px;
+    margin: 10px auto;
+    width: 50%;
+    padding: 10px;
+    align-content: center;
+}
+
+#choose_hobbie{
+border: darkgrey 3px solid;
+    border-radius: 5px;
+    margin: 10px auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+    background-color: lightblue;
+
+
+}
+
+.helpMeessage{
+    color: green;
+    font-weight: bold;
+}
+
+.wrongMeessage{
+       color: darkred;
+    font-weight: bold;
+}
+
+#search{
+    text-align: center;
+    background-color: LightCyan;
+
+}
+
+#login_out{
+    text-align: center;
+    background-color:Silver ;
+
+
+}
+
+#picInstegram{
+    padding: 7px;
+    width: 40px;
+    height: 40px;
+
+}
+
