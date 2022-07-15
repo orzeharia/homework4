@@ -8,6 +8,7 @@
 </head>
 <body>
     {% include('header.html') %}
+    {% block stylesheet %}{% endblock %}
   {% block tohen %}
 
             <h4 >find us on instagram
@@ -15,7 +16,10 @@
         <img  id="picInstegram" src="{{ url_for('assignment3_1.static',filename='/Instagram_logo.png') }}"  alt="" >
             </h4>
 
-    {% endblock %}
+   {% endblock %}
+
+
+
     {% include('style.html') %}
 
 

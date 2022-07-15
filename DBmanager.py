@@ -1,5 +1,5 @@
 import mysql.connector
-from settings import DB
+
 
 # ------------------------------------------------- #
 # ------------- DATABASE CONNECTION --------------- #
@@ -9,7 +9,7 @@ def interact_db(query, query_type: str):
     connection = mysql.connector.connect(host='localhost',
                                          user='root',
                                          passwd='root',
-                                         database='information_schema')
+                                         database='db')
     cursor = connection.cursor(named_tuple=True)
     cursor.execute(query)
     #

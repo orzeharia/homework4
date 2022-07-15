@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %} Assianment 4 Page users{% endblock %}
+
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="{{ url_for('assignment4.static', filename='assignment4CSS.css') }}">
+
+
+{% endblock %}
+
+{% block tohen %}
+
+    <div id="but_user">
+        <form action="/users_fun">
+            <input type="submit" value="click here">
+        </form>
+    <h3>
+       Click here to see the data about the users of the site
+    </h3>
+    </div>
+
+{% endblock %}
+

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %} Assianment 3 Page{% endblock %}
+
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="{{ url_for('assignment4.static', filename='assignment4CSS.css') }}">
+    <script src="{{ url_for('assignment4.static', filename='assignment4js.js') }}"></script>
+{% endblock %}
+
+{% block tohen %}
+
+    <h1 class="headerContact"> Assianment4 Page outer-source</h1>
+
+    <div class="source_div">
+        <form>
+            <input type="number" id="id_user_front" min="0" max="6">
+        </form>
+        <br>
+        <button onclick="func_users()"> find user</button>
+
+        <main></main>
+    </div>
+
+
+
+
+    <div class="source_div">
+        <h2 class="title_source"> back-user</h2>
+        <form action="/fetch" method="get">
+            <input type="number" name="user_id_back" min="1" max="6">
+            <input type="hidden" name="type" value="sync"><br> <br>
+            <input type="submit">
+        </form>
+        {% if session['user_back'] %}
+            {% for user in session['user_back'] %}
+                <img src="{{ user.avatar }}" alt="Profile Picture"/>
+                <h3>{{ user.first_name }}</h3>
+            {% endfor %}
+        {% endif %}
+
+        {% if session['message_back'] %}
+            <h2 id="error"> {{ session['message_back'] }}</h2>
+        {% endif %}
+    </div>
+
+
+{% endblock %}

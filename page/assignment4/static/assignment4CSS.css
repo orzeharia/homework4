@@ -1,0 +1,31 @@
+.con_div{
+    text-align: center;
+    background-color: LightCyan;
+}
+#error{
+    color: darkred;
+}
+
+.title_source{
+     font-weight: bold;
+    color: blue;
+}
+
+.source_div{
+    text-align: center;
+    background-color: #b3b0b9;
+}
+
+#but_user{
+text-align: center;
+position: absolute;
+left: 50%;
+top: 50%;
+    width: 300px;
+     height: 100px;
+transform: translate(-50%, -50%);
+border: 10px solid #00805a;
+padding: 10px;
+    background: #abc8d2;
+
+}

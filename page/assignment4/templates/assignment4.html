@@ -1,8 +1,72 @@
 {% extends 'base.html' %}
 
-{% block title %} Assianment 3 Page{% endblock %}
+{% block title %} Assianment 4 Page{% endblock %}
+
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{{ url_for('assignment4.static', filename='assignment4CSS.css') }}">
+{% endblock %}
 
 {% block tohen %}
 
 <h1 class="headerContact"> Assianment4 Page</h1>
+
+    <div class="con_div">
+    <h2>Insert Form</h2>
+            <form action="/insert_user" method="post">
+                <input type="text" name="name" placeholder="Name">
+                <input type="email" name="email" placeholder="Email">
+                <input type="password" name="password" placeholder="Password">
+                <input type="submit">
+            </form>
+
+    </div>
+
+
+
+    <div class="con_div">
+    <h2 class="header">Deletion Form</h2>
+
+        <form action="/delete_user" method="post">
+            <input type="email" name="email" placeholder="Email"><br>
+            <input type="submit" value="Delete User">
+
+        </form>
+    </div>
+
+
+
+      <div class="con_div">
+        <h2 >Update Form</h2>
+        <form action="/update_user" method="post">
+            <h3 >Please fill in the email of the user you would like to update</h3>
+            <input type="email" name="emailForupdate" placeholder="EmailForupdate"><br>
+
+            <h3>Please fill the text box that you want to update</h3>
+            <input type="text" name="name" placeholder="Name">
+            <input type="password" name="password" placeholder="Password">
+            <input type="submit"  value="update detail">
+        </form>
+
+    {% if session['update'] %}
+        <h4 id="error" >{{session['update']}}</h4>
+    {%endif%}
+
+
+    </div>
+
+
+ <div class="con_div">
+ <h2>Select Form</h2>
+    <form action="/select_users" method="GET">
+
+        <input type="submit" value="Select User">
+    </form>
+        {% for user in users %}
+           <h4> name: {{ user.name }}   email: {{ user.email }}</h4>
+
+        {% endfor %}
+ </div>
+
 {% endblock %}
+
