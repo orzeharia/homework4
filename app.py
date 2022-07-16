@@ -39,5 +39,6 @@ def interact_db(query, query_type: str):
     cursor = connection.cursor(named_tuple=True)
     cursor.execute(query)
 
+
 if __name__ == '__main__':
     app.run(debug=True)

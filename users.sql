@@ -1,3 +1,4 @@
+
 create table users
 (
     name     varchar(20) not null,
