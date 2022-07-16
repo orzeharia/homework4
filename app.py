@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 app.config.from_pyfile('settings.py')
 
-app.secret_key = '123'
+#app.secret_key = '123'
 app.config['SESSION_PERMANENT'] = True
 app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(minutes=15)
 
