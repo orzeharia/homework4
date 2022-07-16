@@ -24,7 +24,8 @@ def users_fanc():
     return render_template('users.HTML')
 
 
-# ------------------------------------------------- #
+
+
 # ------------------- SELECT ---------------------- #
 # ------------------------------------------------- #
 @assignment4.route('/select_users')
@@ -35,31 +36,23 @@ def select_users():
     return render_template('assignment4.html', users=users_list)
 
 
-# ------------------------------------------------- #
-# ------------------------------------------------- #
 
+# -------------------- INSERT
 
-# ------------------------------------------------- #
-# -------------------- INSERT --------------------- #
-# ------------------------------------------------- #
 @assignment4.route('/insert_user', methods=['POST'])
 def insert_user():
     name = request.form['name']
     email = request.form['email']
     password = request.form['password']
     print(f'{name} {email} {password}')
-    query = "INSERT INTO users(name, email, password) VALUES ('%s', '%s', '%s')" % (name, email, password)
-    interact_db(query=query, query_type='commit')
+    if (finduser(email)==False):
+        query = "INSERT INTO users(name, email, password) VALUES ('%s', '%s', '%s')" % (name, email, password)
+        interact_db(query=query, query_type='commit')
     return redirect('/assignment4')
 
 
-# ------------------------------------------------- #
-# ------------------------------------------------- #
+# -------------------- DELETE ---
 
-
-# ------------------------------------------------- #
-# -------------------- DELETE --------------------- #
-# ------------------------------------------------- #
 @assignment4.route('/delete_user', methods=['POST'])
 def delete_user_func():
     email = request.form['email']
@@ -70,7 +63,15 @@ def delete_user_func():
 
 
 # ------------------------------------------------- #
-
+def finduser(user_email):
+    emailsusers = []
+    emails_query = "select email from users"
+    emails_list = interact_db(emails_query, query_type='fetch')
+    for user in emails_list:
+        emailsusers.append(user.email)
+    if user_email in emailsusers:
+        return True
+    return False
 
 # -------------------UPDATE-------------#
 @assignment4.route('/update_user', methods=['POST'])
@@ -163,7 +164,7 @@ def users_fun_json():
 
 
 # -----c
-@assignment4.route('/assignment4/restapi_users/', defaults={'id':1})
+@assignment4.route('/assignment4/restapi_users/', defaults={'id':2})
 @assignment4.route('/assignment4/restapi_users/<int:id>')
 def partc_func(id):
     query = 'select * from users where id=%s;' % id
